@@ -5,7 +5,7 @@ return setmetatable({}, {
         return function(Url, Args)
             local Data = {}
             Data.Url = Url
-            Data.Method = Method
+            Data.Method = string.upper(Method)
 
             for Index, Value in next, Args or {} do
                 Data[string.upper(string.sub(Index, 1, 1)) .. string.lower(string.sub(Index, 2, -1))] = Value
